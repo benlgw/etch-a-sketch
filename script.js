@@ -18,6 +18,20 @@ function displaySketchSize(size) {
 	sliderValue.textContent = `Sketch Size: ${size}x${size}`;
 }
 
+const colorList = [
+	"red",
+	"orange",
+	"yellow",
+	"green",
+	"blue",
+	"indigo",
+	"voilet",
+];
+
+function getRandomColor() {
+	return colorList[Math.floor(Math.random() * colorList.length)];
+}
+
 function createSketchBoard(size) {
 	etchSketch.innerHTML = "";
 	for (let r = 1; r <= size; r++) {
@@ -34,11 +48,10 @@ function createSketchBoard(size) {
 		etchSketch.append(row);
 	}
 	pixels = document.querySelectorAll("#column");
-	console.log(pixels);
 
 	pixels.forEach((element) => {
 		element.addEventListener("mouseover", (event) => {
-			element.setAttribute("style", "background-color: red");
+			element.setAttribute("style", `background-color: ${getRandomColor()}`);
 		});
 	});
 }
