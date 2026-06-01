@@ -25,16 +25,16 @@ input {
 	flex-direction: column;
 	border: 1px solid black;
 	padding: 10px;
+	min-width: 700px;
+	min-height: 700px;
 }
 
 .row {
+	flex: 1;
 	display: flex;
 }
 
 .column {
+	flex: 1;
 	border: 1px solid black;
-	height: auto;
-	min-height: 5px;
-	width: auto;
-	min-width: 5px;
 }
