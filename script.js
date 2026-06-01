@@ -3,6 +3,7 @@ const etchSketch = document.querySelector("#etchSketch");
 const sliderValue = document.querySelector("#sliderValue");
 const slider = document.querySelector("input");
 
+let pixels;
 let size = slider.value;
 displaySketchSize(size);
 createSketchBoard(size);
@@ -12,6 +13,10 @@ slider.addEventListener("click", (event) => {
 	displaySketchSize(size);
 	createSketchBoard(size);
 });
+
+function displaySketchSize(size) {
+	sliderValue.textContent = `Sketch Size: ${size}x${size}`;
+}
 
 function createSketchBoard(size) {
 	etchSketch.innerHTML = "";
@@ -28,17 +33,12 @@ function createSketchBoard(size) {
 		}
 		etchSketch.append(row);
 	}
-}
+	pixels = document.querySelectorAll("#column");
+	console.log(pixels);
 
-function displaySketchSize(size) {
-	sliderValue.textContent = `Sketch Size: ${size}x${size}`;
-}
-
-const pixels = document.querySelectorAll("#column");
-const test = document.querySelector("p");
-
-pixels.forEach((element) => {
-	element.addEventListener("mouseover", (event) => {
-		element.setAttribute("style", "background-color: red");
+	pixels.forEach((element) => {
+		element.addEventListener("mouseover", (event) => {
+			element.setAttribute("style", "background-color: red");
+		});
 	});
-});
+}
