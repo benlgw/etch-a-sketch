@@ -25,7 +25,7 @@ const colorList = [
 	"green",
 	"blue",
 	"indigo",
-	"voilet",
+	"violet",
 ];
 
 function getRandomColor() {
